@@ -6,7 +6,6 @@ Services mostly use docker. The goal of these tools are to be general enough and
 
 ### Dependencies
 - Docker
-- Mac (windows not yet supported, feel free to PR)
 
 ## Start Services
 
@@ -23,18 +22,26 @@ docker compose up
 An easy to remember domain to map local development resources.
 
 For the first time, update your hosts file to add `dev.local`
-```
+```sh
 sudo ./update-hosts.sh
+
+# or for windows
+
+.\update-hosts.ps1
 ```
 
-Start `Dev.Local.Proxy`
+### Start `Dev.Local.Proxy`
 
-```
+```sh
 ./start-proxy.sh
 
-or
+# or for non-elevated
 
 ./start-proxy-non-admin.sh
+
+# or for windows
+
+./start-proxy.ps1
 ```
 
 For instance, logs will be available at:
