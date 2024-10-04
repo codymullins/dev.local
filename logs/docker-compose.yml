@@ -1,0 +1,19 @@
+services:
+  logs:
+    image: datalust/seq:latest
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_API_CANONICALURI=http://dev.local/logs
+    ports:
+      - "5344:80"
+    volumes:
+      - "seq:/data"
+
+volumes:
+  seq:
+
+
+networks:
+  default:
+    driver: bridge
